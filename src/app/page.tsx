@@ -1,15 +1,11 @@
-"use client";
-
-import { useEffect } from "react";
-import styles from "./page.module.css";
+'use client';
+import { useFirebaseConfig } from '@/hooks/useFirebaseConfig';
+import styles from './page.module.css';
 
 export default function Home() {
-  useEffect(() => {
-    fetch("/api/echo", {
-      method: "POST",
-      body: JSON.stringify({ echo: "hello" }),
-    }).then((res) => res.json().then((j) => console.log(j.echo)));
-  }, []);
+  const resume = useFirebaseConfig('resume');
+
+  console.log(resume);
 
   return (
     <main className={styles.main}>
