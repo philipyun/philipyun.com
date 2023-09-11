@@ -11,6 +11,7 @@ export default function Home() {
         <a href="http://old.philipyun.com" target="_blank">
           old.philipyun.com
         </a>
+        <div>hi sohn</div>
       </div>
     </main>
   );
