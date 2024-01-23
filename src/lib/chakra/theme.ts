@@ -1,11 +1,11 @@
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react';
+import { ChakraTheme, extendTheme, type ThemeConfig } from '@chakra-ui/react';
 
 const config: ThemeConfig = {
   initialColorMode: 'system',
   useSystemColorMode: true,
 };
 
-const theme = extendTheme({
+const extendedTheme: Partial<ChakraTheme> = {
   config,
   fonts: {
     heading: 'var(--font-bebas)',
@@ -13,6 +13,8 @@ const theme = extendTheme({
     div: 'var(--font-noto)',
     p: 'var(--font-noto)',
   },
-});
+};
+
+const theme = extendTheme(extendedTheme);
 
 export default theme;

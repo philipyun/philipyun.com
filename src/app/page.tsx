@@ -1,11 +1,11 @@
 import { ExternalLinkIcon } from '@/lib/chakra/icons';
-import { AspectRatio, Center, Container, Heading, Image, Link, Text } from '@chakra-ui/react';
+import { AspectRatio, Button, ButtonGroup, Center, Container, Heading, Image, Link, Text } from '@chakra-ui/react';
 
 const headshotImg =
   'https://images.ctfassets.net/o5ofmmhtf81x/18CaF6xSs735b9W2MmVAaL/118dbb5726a935b6614dae9992a98d37/me.jpeg';
 export default function Home() {
   return (
-    <Container as="main" data-id="home-main" width="100%" maxWidth="100%" paddingY={32}>
+    <Container as="main" data-id="home-main" width="100%" maxWidth="100%" paddingY={12}>
       <Container data-id="overview-container" width="100%">
         <Center>
           <Heading fontSize={64}>Philip Yun</Heading>
@@ -22,10 +22,25 @@ export default function Home() {
           Corporation
         </Text>
       </Container>
-      <Container paddingY={2}>
+      <Container marginY={2}>
+        <Center>
+          <ButtonGroup>
+            <Button variant="outline" colorScheme="teal">
+              About Me
+            </Button>
+            <Button variant="outline" colorScheme="teal">
+              Resume
+            </Button>
+            <Button variant="outline" colorScheme="teal">
+              Music
+            </Button>
+          </ButtonGroup>
+        </Center>
+      </Container>
+      <Container marginY={2}>
         <Text textAlign="center">This site is under construction...</Text>
       </Container>
-      <Container paddingY={2}>
+      <Container marginY={2}>
         <Text textAlign="center">
           The old site can be found at&nbsp;
           <Link href="http://old.philipyun.com" isExternal>
