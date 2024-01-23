@@ -1,22 +1,25 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import type { Metadata } from 'next';
+import { Bebas_Neue, Noto_Sans } from 'next/font/google';
+import { CSSReset } from '../lib/chakra/css-reset';
+import { Providers } from './providers';
 
-const inter = Inter({ subsets: ['latin'] })
+const noto = Noto_Sans({ subsets: ['latin'], variable: '--font-noto' });
+const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'], variable: '--font-bebas' });
 
 export const metadata: Metadata = {
   title: 'Philip Yun',
   description: 'Philip Yun dot com',
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${noto.variable} ${bebas.variable}`}>
+      <body>
+        <Providers>
+          <CSSReset />
+          {children}
+        </Providers>
+      </body>
     </html>
-  )
+  );
 }
